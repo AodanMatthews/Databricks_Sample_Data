@@ -1,0 +1,6 @@
+version: 1
+unique_name: AS Adventure - Currency Conversion
+object_type: catalog
+label: AS Adventure - Currency Conversion
+aggressive_agg_promotion: false
+build_speculative_aggs: true
