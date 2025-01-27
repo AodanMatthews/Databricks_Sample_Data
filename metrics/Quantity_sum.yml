@@ -1,0 +1,6 @@
+unique_name: Quantity_sum
+object_type: metric
+label: Quantity
+calculation_method: sum
+column: l_quantity
+dataset: lineitem

@@ -1,0 +1,75 @@
+unique_name: Customer Dimension
+object_type: dimension
+label: Customer Dimension
+hierarchies:
+  - unique_name: Customer Hierarchy
+    label: Customer Hierarchy
+    levels:
+      - unique_name: Customer Region
+      - unique_name: Customer Nation
+      - unique_name: Market Segment
+      - unique_name: Customer Number
+      - unique_name: Customer Key
+level_attributes:
+  - unique_name: Market Segment
+    label: Market Segment
+    contains_unique_names: false
+    dataset: customer
+    is_unique_key: false
+    key_columns:
+      - c_mktsegment
+    name_column: c_mktsegment
+    sort_column: c_mktsegment
+  - unique_name: Customer Number
+    label: Customer Number
+    contains_unique_names: false
+    dataset: customer
+    is_unique_key: false
+    key_columns:
+      - c_name
+    name_column: c_name
+    sort_column: c_name
+  - unique_name: Customer Key
+    label: Customer Key
+    contains_unique_names: false
+    dataset: customer
+    is_hidden: true
+    is_unique_key: false
+    key_columns:
+      - c_custkey
+    name_column: c_custkey
+    sort_column: c_custkey
+  - unique_name: Customer Region
+    label: Customer Region
+    contains_unique_names: false
+    dataset: region
+    is_unique_key: false
+    key_columns:
+      - r_regionkey
+    name_column: r_name
+    sort_column: r_regionkey
+  - unique_name: Customer Nation
+    label: Customer Nation
+    contains_unique_names: false
+    dataset: nation
+    is_unique_key: false
+    key_columns:
+      - n_nationkey
+    name_column: n_name
+    sort_column: n_nationkey
+relationships:
+  - from:
+      dataset: nation
+      join_columns:
+        - n_regionkey
+    to:
+      level: Customer Region
+    type: snowflake
+  - from:
+      dataset: customer
+      join_columns:
+        - c_nationkey
+    to:
+      level: Customer Nation
+    type: snowflake
+type: standard

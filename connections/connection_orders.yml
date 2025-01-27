@@ -1,0 +1,6 @@
+unique_name: connection_orders
+object_type: connection
+label: connection_orders
+as_connection: Databricks
+database: samples
+schema: tpch
