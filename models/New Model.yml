@@ -3,5 +3,13 @@ object_type: model
 label: New Model
 dimensions: []
 metrics:
-  - unique_name: Quantity_sum
-relationships: []
+  - unique_name: Order_Total_Price
+relationships:
+  - unique_name: orders_o_custkey_to_Customer Dimension_Customer Key
+    from:
+      dataset: orders
+      join_columns:
+        - o_custkey
+    to:
+      dimension: Customer Dimension
+      level: Customer Key

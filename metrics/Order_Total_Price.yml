@@ -1,0 +1,6 @@
+unique_name: Order_Total_Price
+object_type: metric
+label: Order Total Price
+calculation_method: sum
+column: o_totalprice
+dataset: orders
