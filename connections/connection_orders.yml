@@ -1,6 +1,6 @@
 unique_name: connection_orders
 object_type: connection
 label: connection_orders
-as_connection: Databricks
+as_connection: dataTeam-catalog-gold-uat
 database: dataTeam-catalog-gold-uat
 schema: tpch
